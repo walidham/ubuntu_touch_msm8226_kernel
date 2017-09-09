@@ -36,8 +36,8 @@ obj-y += compat/
 # obj-$(CONFIG_BACKPORT_CFG80211) += net/wireless/
 # obj-$(CONFIG_BACKPORT_MAC80211) += net/mac80211/
 # obj-$(CONFIG_BACKPORT_WLAN) += drivers/net/wireless/
-#obj-$(CONFIG_BACKPORT_BT += net/bluetooth/
-#obj-$(CONFIG_BACKPORT_BT += drivers/bluetooth/
+obj-$(CONFIG_BACKPORT_BT) += net/bluetooth/
+obj-$(CONFIG_BACKPORT_BT) += drivers/bluetooth/
 # obj-$(CONFIG_BACKPORT_SSB) += drivers/ssb/
 # obj-$(CONFIG_BACKPORT_BCMA) += drivers/bcma/
 # obj-$(CONFIG_BACKPORT_ETHERNET) += drivers/net/ethernet/
@@ -45,11 +45,11 @@ obj-y += compat/
 # obj-$(CONFIG_BACKPORT_NFC) += net/nfc/
 # obj-$(CONFIG_BACKPORT_NFC) += drivers/nfc/
 # obj-$(CONFIG_BACKPORT_MEDIA_SUPPORT) += drivers/media/
-#
-#obj-$(CONFIG_BACKPORT_6LOWPAN+= net/6lowpan/
-#obj-$(CONFIG_BACKPORT_IEEE802154 += net/ieee802154/
-#obj-$(CONFIG_BACKPORT_BT += net/ieee802154/
-#obj-$(CONFIG_BACKPORT_MAC802154 += net/mac802154/
+
+obj-$(CONFIG_BACKPORT_6LOWPAN) += net/6lowpan/
+obj-$(CONFIG_BACKPORT_IEEE802154) += net/ieee802154/
+obj-$(CONFIG_BACKPORT_BT) += net/ieee802154/
+obj-$(CONFIG_BACKPORT_MAC802154) += net/mac802154/
 # obj-$(CONFIG_BACKPORT_IEEE802154) += drivers/net/ieee802154/
 
 # obj-$(CONFIG_BACKPORT_USB_WDM) += drivers/usb/class/
