@@ -996,6 +996,25 @@ int mdss_mdp_overlay_kickoff(struct msm_fb_data_type *mfd,
 		mutex_lock(ctl->shared_lock);
 
 	mutex_lock(&mdp5_data->ov_lock);
+	//ADDED BY WALID
+	ret = mdss_mdp_overlay_start(mfd);
+	if (ret) {
+		pr_err("unable to start overlay %d (%d)\n", mfd->index, ret);
+		mutex_unlock(&mdp5_data->ov_lock);
+		if (ctl->shared_lock)
+			mutex_unlock(ctl->shared_lock);
+		return ret;
+	}
+
+	/*ret = mdss_iommu_ctrl(1);
+	if (IS_ERR_VALUE(ret)) {
+		pr_err("iommu attach failed rc=%d\n", ret);
+		mutex_unlock(&mdp5_data->ov_lock);
+		if (ctl->shared_lock)
+			mutex_unlock(ctl->shared_lock);
+		return ret;
+	}*/
+	//END ADD
 	mutex_lock(&mfd->lock);
 
 	/*
